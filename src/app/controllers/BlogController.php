@@ -31,6 +31,6 @@ class BlogController extends Controller
     public function addPost()
     {
         $this -> blog -> addBlog($_POST['Blog_name'], $_POST['Content'], $_POST['Author_ID']);
-        header("location: ".URLROOT."/public"); 
+        header("location: ".URLROOT."/public");
     }
 }

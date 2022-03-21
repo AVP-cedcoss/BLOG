@@ -19,7 +19,8 @@ class Blogs
     public function addBlog($name, $content, $Author_ID)
     {
         $this -> db -> query("
-        INSERT INTO `Blogs` (`Blog_Name`, `Blog_Content`, `Blog_Author_ID`, `Blog_Status`) VALUES ('".$name."', '".$content."', '".$Author_ID."', '".$this -> status."');
+        INSERT INTO `Blogs` (`Blog_Name`, `Blog_Content`, `Blog_Author_ID`, `Blog_Status`)
+         VALUES ('".$name."', '".$content."', '".$Author_ID."', '".$this -> status."');
         ");
 
         return ($this -> db -> execute());
