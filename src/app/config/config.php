@@ -6,7 +6,7 @@
     define('DB_NAME', 'Blog');
 
     //Document Root File
-    define('DOCROOT', dirname(dirname(__FILE__)));
+    define('APPROOT', dirname(dirname(__FILE__)));
 
     //URL Root
     define('URLROOT', 'http://localhost:8080');

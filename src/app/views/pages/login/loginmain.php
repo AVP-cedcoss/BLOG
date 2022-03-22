@@ -28,6 +28,30 @@
         </a>
         <!-- </button> -->
         <a href="../app/views/pages/home.php" class="btn btn-secondary my-2">Back To Home</a>
+        <?php
+        $html='';
+        if (isset($_GET['signup'])) {
+            if ($_GET['signup'] == 'error') {
+                $html.='
+                    <div class="row">
+                      <div class="col-12 text-danger fw-bold bg-info">
+                        Some Error Occured
+                      </div>
+                    </div>
+                ';
+            }
+        }
+        if (isset($_GET['falseconfirm'])) {
+            $html.='
+                <div class="row">
+                    <div class="col-12 text-danger fw-bold bg-info">
+                    Your Account is pending approval from Admin. Wait for confirmation to Proceed.
+                    </div>
+                </div>
+            ';
+        }
+        echo $html;
+        ?>
         <p class="mt-5 mb-3 text-muted">&copy; CEDCOSS Technologies</p>
     </main>
     

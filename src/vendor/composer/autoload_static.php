@@ -37,10 +37,6 @@ class ComposerStaticInita6a10142bd528b9a80c53c0e74b2b332
     );
 
     public static $classMap = array (
-        'Model\\Admin' => __DIR__ . '/../..' . '/app/models/Admin.php',
-        'Model\\User' => __DIR__ . '/../..' . '/app/models/User.php',
-        'controllers\\Pages' => __DIR__ . '/../..' . '/app/controllers/Pages.php',
-        'controllers\\UserController' => __DIR__ . '/../..' . '/app/controllers/UserController.php',
         'libraries\\Controller' => __DIR__ . '/../..' . '/app/libraries/Controller.php',
         'libraries\\Core' => __DIR__ . '/../..' . '/app/libraries/Core.php',
         'libraries\\Database' => __DIR__ . '/../..' . '/app/libraries/Database.php',

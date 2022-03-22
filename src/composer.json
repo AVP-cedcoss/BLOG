@@ -5,5 +5,8 @@
             "libraries\\": "app/libraries",
             "controllers\\": "app/controllers"
         }
+    },
+    "require": {
+        "php-activerecord/php-activerecord": "^1.2"
     }
 }

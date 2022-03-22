@@ -1,21 +1,28 @@
 <?php
-    // namespace Model;
+    // namespace App\Models;
 
-    use libraries\Database;
+//     use libraries\Database;
 
-use function PHPSTORM_META\type;
+// use function PHPSTORM_META\type;
 
-class User
+
+class _User extends \ActiveRecord\Model
 {
-    private $db;
-    private $role;
-    private $status;
+    
+    // private $db;
+    // private $role;
+    // private $status;
+    public $name;
+    public $email;
+    public $role;
+    public $status;
+    public $password;
+
 
     public function __construct()
     {
-        $this -> db = new Database;
-        $this -> role = "User";
-        $this -> status = "Pending";
+        // $this -> db = new Database;
+        
     }
 
     /**
@@ -28,12 +35,20 @@ class User
      */
     public function addUser($email, $name, $password)
     {
-        $this -> db -> query("
-                INSERT INTO `User_Details` (`Name`, `Email`, `Password`, `Role`, `Status`) 
-                VALUES ('".$name."', '".$email."', '".$password."',
-                '".$this->role."', '".$this->status."');
-        ");
-        return ($this -> db -> execute());
+        $this->name=$name;
+        $this -> email = $email;
+        $this -> password = $password;
+        $this -> role = "User";
+        $this -> status = "Pending";
+        $this -> save();
+        echo "HI";
+
+        // $this -> db -> query("
+        //         INSERT INTO `User_Details` (`Name`, `Email`, `Password`, `Role`, `Status`) 
+        //         VALUES ('".$name."', '".$email."', '".$password."',
+        //         '".$this->role."', '".$this->status."');
+        // ");
+        // return ($this -> db -> execute());
     }
 
     /**
@@ -402,4 +417,5 @@ class User
         }
         return $html;
     }
+    
 }

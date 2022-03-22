@@ -1,9 +1,8 @@
 <?php
-global $USER;
-if (!($USER -> getUserData($_SESSION['user'], 'Status') == 'Approved') &&
-  !($USER -> getUserData($_SESSION['user'], 'Role') == 'Admin')) {
-    header("location: ".URLROOT."/public/pages/login");
-}
+// if (!($USER -> getUserData($_SESSION['user'], 'Status') == 'Approved') &&
+//   !($USER -> getUserData($_SESSION['user'], 'Role') == 'Admin')) {
+//     header("location: ".URLROOT."/public/pages/login");
+// }
 ?>
 <!doctype html>
 <html lang="en">

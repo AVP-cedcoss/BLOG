@@ -63,7 +63,7 @@ class AdminController extends Controller
 
     public function changeStatusUser()
     {
-        global $USER;
+        $data = $this -> model('User')::find_by_user_id($_POST['User_ID']);
         $USER -> changeUserStatus($_POST['status'], $_POST['User_ID']);
         header("location: ".URLROOT."/public/AdminController/users");
     }
