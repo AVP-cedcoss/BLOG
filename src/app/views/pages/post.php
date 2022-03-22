@@ -9,7 +9,7 @@
                         <div class="post-heading">
                             <?php
                                 global $BLOG;
-                            if (($BLOG -> blogStatusCheck($data[0]))['Blog_Status'] != 'Approved') {
+                            if (($BLOG -> blogStatusCheck($data[0]))[0] != 'Approved') {
                                     echo "POST UNAVAILABLE";
                             } else {
                                     echo $BLOG -> printHeadingPost($data[0]);
@@ -27,7 +27,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <?php
                             global $BLOG;
-                        if (($BLOG -> blogStatusCheck($data[0]))['Blog_Status'] != 'Approved') {
+                        if (($BLOG -> blogStatusCheck($data[0]))[0] != 'Approved') {
                                 echo "POST UNAVAILABLE";
                         } else {
                                 echo $BLOG -> printPost($data[0]);

@@ -209,7 +209,7 @@ class Admin extends Controller
     public function printAllBlogs()
     {
         global $BLOG;
-        $data = $BLOG -> getAllBlogs();
+        $data = $this -> model('Blog')::find('all');
         $html = '';
         foreach ($data as $value) {
             $html.= $BLOG -> blogEditFalse($value);

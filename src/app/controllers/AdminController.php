@@ -32,14 +32,15 @@ class AdminController extends Controller
             case 'statusBlog':
                 $this -> changeStatusBlog();
                 break;
-
         }
     }
 
     public function changeStatusBlog()
     {
-        global $BLOG;
-        $BLOG -> changeBlogStatus($_POST['status'], $_POST['Blog_ID']);
+        $blog = $this -> model('Blog');
+        $data = $blog::find_by_blog_id($_POST['Blog_ID']);
+        $data -> blog_status = $_POST['status'];
+        $data -> save();
         header("location: ".URLROOT."/public/AdminController/blogs");
     }
 
@@ -63,22 +64,27 @@ class AdminController extends Controller
 
     public function changeStatusUser()
     {
-        $data = $this -> model('User')::find_by_user_id($_POST['User_ID']);
-        $USER -> changeUserStatus($_POST['status'], $_POST['User_ID']);
+        $User = $this -> model('User');
+        $data = $User::find_by_user_id($_POST['User_ID']);
+        $data -> status = $_POST['status'];
+        $data -> save();
         header("location: ".URLROOT."/public/AdminController/users");
     }
 
     public function updateUser()
     {
-        global $USER;
-        $USER -> updateUserData($_POST['User_ID'], $_POST['name']);
+        $User = $this -> model('User');
+        $data = $User::find_by_user_id($_POST['User_ID']);
+        $data -> name = $_POST['name'];
+        $data -> save();
         header("location: ".URLROOT."/public/AdminController/users");
     }
 
     public function deleteUser()
     {
-        global $USER;
-        $USER -> deleteUserData($_POST['User_ID']);
+        $User = $this -> model('User');
+        $data = $User::find_by_user_id($_POST['User_ID']);
+        $data -> delete();
         header("location: ".URLROOT."/public/AdminController/users");
     }
 }

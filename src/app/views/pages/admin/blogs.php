@@ -52,7 +52,7 @@
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Name</th>
-              <th scope="col">Author</th>
+              <!-- <th scope="col">Author</th> -->
               <th scope="col">Status</th>
               <th scope="col">Update Status</th>
             </tr>

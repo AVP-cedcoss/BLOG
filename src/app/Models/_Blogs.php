@@ -5,7 +5,7 @@
 
 use function PHPSTORM_META\type;
 
-class Blogs
+class BLOGS
 {
     private $db;
     private $status;
